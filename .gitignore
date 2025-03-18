@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### Secret File
-src/main/resources/secret.properties
+src/main/resources/application-db.properties
