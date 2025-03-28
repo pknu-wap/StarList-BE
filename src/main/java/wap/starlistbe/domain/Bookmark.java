@@ -1,16 +1,13 @@
 package wap.starlistbe.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 @Entity
 @Getter
 public class Bookmark {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -40,4 +37,7 @@ public class Bookmark {
     private Boolean syncing;
 
     private Integer googleId;
+
+    @ManyToOne
+    private Folder folder;
 }
