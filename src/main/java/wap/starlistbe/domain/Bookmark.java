@@ -7,7 +7,8 @@ import lombok.Getter;
 @Getter
 public class Bookmark {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
@@ -39,5 +40,5 @@ public class Bookmark {
     private Integer googleId;
 
     @ManyToOne
-    private Folder folder;
+    private Folder folderId;
 }

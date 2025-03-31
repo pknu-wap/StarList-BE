@@ -9,16 +9,17 @@ import java.util.List;
 @Getter
 public class Folder {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
 
     private Long googleId;
 
-    @OneToMany
-    private List<Bookmark> bookmarks;
-
     @ManyToOne
     private Root rootId;
+
+    @OneToMany(mappedBy = "folderId")
+    private List<Bookmark> bookmarks;
 }
